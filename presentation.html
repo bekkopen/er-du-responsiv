@@ -121,12 +121,38 @@
         </section>
         <section class="build">
 <pre>@media screen {
-  background: #000;
-  color: #fff;
+  body {
+    background: #000;
+    color: #fff;
+  }
 }
 @media print {
-  background: #fff;
-  color: #000;
+  body {
+    background: #fff;
+    color: #000;
+  }
+}</pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          CSS3 media queries
+        </h3>
+        <section>
+<pre>&lt;link rel="stylesheet" media="screen and (min-width: 1024px)" href="/desktop.css"&gt;
+&lt;link rel="stylesheet" media="screen and (max-width: 480px)" href="/mobile.css"&gt;</pre>
+        </section>
+        <section class="build">
+<pre>@media screen and (min-width: 1024px) {
+  body {
+    font-size: 1.25em;
+  }
+}
+@media print and (max-width: 480px) {
+  body {
+    font-size: .8em;
+  }
 }</pre>
         </section>
       </article>
