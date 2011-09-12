@@ -25,23 +25,14 @@
         text-decoration: none;
       }
 
-      .slides.template-bekk > article:not(.nobackground):not(.background) {
+      .slides.template-bekk > article:not(.nobackground):not(.fill) {
         background: #fff url(images/bekk-logo-small.png) 710px 625px no-repeat;
       }
 
-      .slides > article.dark h1 {
+      .slides > article.fill h1 {
         color: #fff;
         text-shadow: rgba(0, 0, 0, .5) 3px 3px 1px;
       }
-
-      .slides > article.background.hands {
-        background: url(images/hands.jpg) 0 0 no-repeat;
-      }
-
-      .slides > article.background.question {
-        background: url(images/question.jpg) 0 0 no-repeat;
-      }
-
     </style>
   </head>
 
@@ -77,11 +68,14 @@
         </p>
       </article>
 
-      <article class="background hands dark">
+      <article class="fill">
         <h1>
           H&aring;ndsopprekking
         </h1>
-        <div class='source'>
+        <p>
+          <img src="images/hands.jpg">
+        </p>
+        <div class='source white'>
           Source: http://flic.kr/p/5Z9g8a
         </div>
       </article>
@@ -234,7 +228,10 @@
         </p>
       </article>
 
-      <article class="background question">
+      <article class="fill">
+        <p>
+          <img src="images/question.jpg">
+        </p>
         <div class='source'>
           Source: http://flic.kr/p/ubG6g
         </div>
