@@ -46,6 +46,12 @@
         position: static;
         text-shadow: rgba(0, 0, 0, .75) 3px 3px 5px;
       }
+
+      ul.long {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+      }
     </style>
   </head>
 
@@ -249,11 +255,11 @@
         </section>
       </article>
 
-      <article class="smaller">
+      <article>
         <h3>
           Flere media egenskaper
         </h3>
-        <ul>
+        <ul class="long">
           <li>width</li>
           <li>device-width</li>
           <li>height</li>
@@ -280,7 +286,7 @@
         <p>
           <img src="images/celltower.jpg">
         </p>
-        <div class='source'>
+        <div class='source white'>
           Kilde: http://flic.kr/p/6c2EL3
         </div>
       </article>
@@ -297,7 +303,7 @@
         <p>
           <img src="images/fox.jpg">
         </p>
-        <div class='source'>
+        <div class='source white'>
           Kilde: http://flic.kr/p/qLp7Q
         </div>
       </article>
@@ -310,7 +316,7 @@
         <p>
           <img src="images/globe.jpg">
         </p>
-        <div class='source'>
+        <div class='source white'>
           Kilde: http://flic.kr/p/8g7mtR
         </div>
       </article>
