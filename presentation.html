@@ -268,14 +268,55 @@
           Flytende grid
         </h2>
         <p>
-          TODO: kode, eksempel
-        </p>
-        <p>
           <img src="images/iceberg.jpg">
         </p>
         <div class='source white'>
           Kilde: http://flic.kr/p/5hK1J
         </div>
+      </article>
+
+      <article class="smaller">
+        <section>
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;title&gt;Flytende grid&lt;/title&gt;
+&lt;div id="page"&gt;
+  &lt;article&gt;Hovedinnhold&lt;/article&gt;
+  &lt;aside&gt;Sekund&aelig;rt innhold&lt;/aside&gt;
+&lt;/div&gt;
+</pre>
+        </section>
+        <section>
+<pre>
+#page {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 50em;
+}
+#page > article {
+  float: left;
+  width: 75%;
+}
+#page > aside {
+  float: right;
+  width: 25%;
+}
+</pre>
+        </section>
+        <section class="build">
+<pre>@media screen {
+  body {
+    background: #000;
+    color: #fff;
+  }
+}
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+}</pre>
+        </section>
       </article>
 
       <article class="fill">
