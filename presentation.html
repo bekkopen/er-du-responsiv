@@ -320,12 +320,12 @@
   padding: 0 1em;
   width: 50em;
 }
-#page > article {
+#page &gt; article {
   float: left;
   margin-right: 2.5em;
   width: 35em;
 }
-#page > aside {
+#page &gt; aside {
   float: right;
   width: 12.5em;
 }
@@ -347,12 +347,12 @@
   padding: 0 1em;
   max-width: 50em;
 }
-#page > article {
+#page &gt; article {
   float: left;
   margin-right: 5%;
   width: 70%;
 }
-#page > aside {
+#page &gt; aside {
   float: right;
   width: 25%;
 }
@@ -376,6 +376,7 @@
       </article>
 
       <!-- TODO: bandwidth -->
+      <!-- TODO: not just images, other media like video -->
 
       <article>
         <h3>
@@ -463,23 +464,26 @@ img {
           CSS3 media queries
         </h3>
         <section>
-<pre>&lt;link rel="stylesheet" media="screen and (min-width: 1024px)"
-      href="/desktop.css"&gt;
-&lt;link rel="stylesheet" media="screen and (max-width: 480px)"
+<pre>
+&lt;link rel="stylesheet" media="screen and (max-width: 20em)"
       href="/mobile.css"&gt;</pre>
         </section>
         <section class="build">
-<pre>@media screen and (min-width: 1024px) {
-  body {
-    font-size: 1.25em;
+<pre>
+@media screen and (max-width: 20em) {
+  #page &gt; article,
+  #page &gt; aside {
+    float: none;
+    width: auto;
   }
-}
-@media print and (max-width: 480px) {
-  body {
-    font-size: .8em;
+  #page &gt; article {
+    margin-right: 0;
   }
 }</pre>
         </section>
+        <div class='source'>
+          <a href="examples/media_queries.html">Eksempel</a>
+        </div>
       </article>
 
       <article>
