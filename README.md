@@ -4,8 +4,6 @@ for [itDAGENE 2011][itd].
 ### TODO
 
 * Show statistics of responsive web design vs plain media queries usage.
-* Show slide with collection of responsive grid systems. Show that most
-  is far from truly reponsive.
 * Check out this presentation:
   http://videos.videopress.com/CRPE8yB1/05-saracannon_hd.mp4
   http://www.slideshare.net/saracannon/responsive-web-design-wordcamp-san-francisco
