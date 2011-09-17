@@ -51,6 +51,11 @@
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
+        margin-left: 0;
+      }
+
+      article ul.long li:before {
+        content: "";
       }
 
       article p.question {
@@ -465,12 +470,12 @@ img {
         </h3>
         <section>
 <pre>
-&lt;link rel="stylesheet" media="screen and (max-width: 20em)"
-      href="/mobile.css"&gt;</pre>
+&lt;link rel="stylesheet" media="screen and (max-width: 35em)"
+      href="/narrow.css"&gt;</pre>
         </section>
         <section class="build">
 <pre>
-@media screen and (max-width: 20em) {
+@media screen and (max-width: 35em) {
   #page &gt; article,
   #page &gt; aside {
     float: none;
@@ -484,19 +489,6 @@ img {
         <div class='source'>
           <a href="examples/media_queries.html">Eksempel</a>
         </div>
-      </article>
-
-      <article>
-        <h3>
-          Viewport
-        </h3>
-        <p>
-          TODO: eksempel
-          TODO: kode
-        </p>
-        <section class="build">
-          <pre>&lt;meta name="viewport" content="width=device-width"&gt;</pre>
-        </section>
       </article>
 
       <article>
@@ -520,13 +512,23 @@ img {
         </li>
       </article>
 
+      <article>
+        <h3>
+          Viewport
+        </h3>
+        <p>
+          TODO: eksempel
+          TODO: kode
+        </p>
+        <section class="build">
+          <pre>&lt;meta name="viewport" content="width=device-width"&gt;</pre>
+        </section>
+      </article>
+
       <article class="fill">
         <h2>
           Mobile first
         </h2>
-        <p>
-          TODO: kode, eksempel
-        </p>
         <p>
           <img src="images/celltower.jpg">
         </p>
@@ -535,6 +537,32 @@ img {
         </div>
       </article>
 
+      <article>
+        <section>
+<pre>
+#page {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 50em;
+}
+img { max-width: 100%; }
+
+@media screen and (min-width: 35em) {
+  #page &gt; article {
+    float: left;
+    margin-right: 2.5em;
+    width: 35em;
+  }
+  #page &gt; aside {
+    float: right;
+    width: 12.5em;
+  }
+}</pre>
+        </section>
+        <div class='source'>
+          <a href="examples/mobile_first.html">Eksempel</a>
+        </div>
+      </article>
       <article class="fill">
         <h2>
           Nettleserst&oslash;tte
