@@ -275,17 +275,49 @@
         </div>
       </article>
 
-      <article class="smaller">
+      <article>
+        <h3>
+          HTML
+        </h3>
         <section>
 <pre>
 &lt;!DOCTYPE html&gt;
-&lt;title&gt;Flytende grid&lt;/title&gt;
+&lt;title&gt;Fast eller flytende grid&lt;/title&gt;
 &lt;div id="page"&gt;
   &lt;article&gt;Hovedinnhold&lt;/article&gt;
   &lt;aside&gt;Sekund&aelig;rt innhold&lt;/aside&gt;
 &lt;/div&gt;
 </pre>
         </section>
+      </article>
+
+      <article>
+        <h3>
+          Fast grid
+        </h3>
+        <section>
+<pre>
+#page {
+  margin: 0 auto;
+  padding: 0 1em;
+  width: 50em;
+}
+#page > article {
+  float: left;
+  width: 37.5em;
+}
+#page > aside {
+  float: right;
+  width: 12.5em;
+}
+</pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          Flytende grid
+        </h3>
         <section>
 <pre>
 #page {
@@ -302,20 +334,6 @@
   width: 25%;
 }
 </pre>
-        </section>
-        <section class="build">
-<pre>@media screen {
-  body {
-    background: #000;
-    color: #fff;
-  }
-}
-@media print {
-  body {
-    background: #fff;
-    color: #000;
-  }
-}</pre>
         </section>
       </article>
 
