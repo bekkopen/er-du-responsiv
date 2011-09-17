@@ -1,0 +1,22 @@
+#page {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 50em;
+}
+#page > article {
+  float: left;
+  margin-right: 5%;
+  width: 70%;
+}
+#page > aside {
+  float: right;
+  width: 25%;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
