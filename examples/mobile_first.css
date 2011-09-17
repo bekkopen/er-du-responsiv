@@ -23,3 +23,9 @@ img {
     width: 25%;
   }
 }
+
+@media screen and (min-width: 60em) {
+  body {
+    font-size: 125%;
+  }
+}
