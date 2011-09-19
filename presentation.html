@@ -54,6 +54,12 @@
         text-shadow: rgba(0, 0, 0, .75) 3px 3px 5px;
       }
 
+      .slides > article.fill .number {
+        display: block;
+        font-size: 2em;
+        margin: -100px 0 100px;
+      }
+
       .slides > article.geckoboard {
         background-color: #111314;
       }
@@ -69,6 +75,7 @@
         margin-left: 0;
       }
 
+      article ol li:before,
       article ul.long li:before {
         content: "";
       }
@@ -298,16 +305,16 @@
         <h3>
           Responsive byggestener
         </h3>
-        <ul class="build">
+        <ol class="build">
           <li>Flytende grid</li>
           <li>Fleksible bilder</li>
           <li>Media queries</li>
-        </ul>
+        </ol>
       </article>
 
       <article class="fill">
         <h2>
-          Flytende grid
+          <span class="number">#1</span> Flytende grid
         </h2>
         <p>
           <img src="images/iceberg.jpg">
@@ -389,7 +396,7 @@
 
       <article class="fill">
         <h2>
-          Fleksible bilder
+          <span class="number">#2</span> Fleksible bilder
         </h2>
         <p>
           <img src="images/straws.jpg">
@@ -471,7 +478,7 @@ video {
 
       <article class="fill">
         <h2>
-          Media queries
+          <span class="number">#3</span> Media queries
         </h2>
         <p>
           <img src="images/radio.jpg">
