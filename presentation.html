@@ -466,8 +466,6 @@ video {
         </div>
       </article>
 
-      <!-- TODO: list bandwidth problems and solutions -->
-
       <article class="fill">
         <h2>
           <span class="number">#3</span> Media queries
@@ -718,7 +716,24 @@ img {
         </div>
       </article>
 
-      <!-- TODO: example with larger image in larger min-width query -->
+      <article>
+        <h3>
+          Lite bakgrunnsbilde for smale skjermer
+        </h3>
+        <section>
+<pre>
+#page {
+  background: transparent url(narrow_bg.png) 50% 0 repeat-y;
+}
+
+@media screen and (min-width: 50em) {
+  #page {
+    background-image: url(wide_bg.png);
+  }
+}
+</pre>
+        </section>
+      </article>
 
       <article class="fill">
         <h2>
@@ -927,8 +942,6 @@ var responsiveTables = function() {
           <img class="desktop" src="images/bg.desktop.png">
         </p>
       </article>
-
-      <!-- TODO: list and recommend responsive grid fameworks? -->
 
       <article>
         <h3>
