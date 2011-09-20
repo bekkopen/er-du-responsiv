@@ -773,7 +773,7 @@ img {
 </pre>
         </section>
         <div class='source'>
-          <a href="examples/flexible_table.html">Eksempel</a>
+          <a href="examples/inflexible_table.html">Eksempel</a>
         </div>
       </article>
 
@@ -828,6 +828,24 @@ tr {
         </div>
       </article>
 
+      <article>
+        <section>
+<pre>
+var responsiveTables = function() {
+  $("article table").each(function(table) {
+    if($(table).css("display") === "block") {
+      prependHeadersToTableCells(table);
+    } else if($(table).css("display") === "table") {
+      removeHeadersFromTableCells(table);
+    }
+  });
+}
+</pre>
+        </section>
+        <div class='source'>
+          <a href="examples/flexible_table_and_js.html">Eksempel</a>
+        </div>
+      </article>
       <article class="fill">
         <h2>
           Utbredelse
