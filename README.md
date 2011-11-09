@@ -1,4 +1,4 @@
 A presentation giving an introduction to Responsive Web Design
-for [itDAGENE 2011][itd].
+for [Grensesnittet 2011.11.15][gre].
 
-[itd]: http://www.itdagene.no/forside/program#kurs-bekk
+[gre]: http://www.meetup.com/grensesnittet/events/33886682/
