@@ -5,7 +5,7 @@ import SocketServer
 import urllib
 import sys
 
-PORT = 8080
+PORT = 40808
 URL_PREFIX = "http://www.aftenposten.no"
 
 CSS_MOCK = None
@@ -42,5 +42,9 @@ if __name__ == "__main__":
 
     CSS_MOCK = sys.argv[1]
 
-    httpd = ThreadedTCPServer(("", PORT), ApProxy)
-    httpd.serve_forever()
+    try:
+        httpd = ThreadedTCPServer(("", PORT), ApProxy)
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        httpd.socket.close()
+        httpd.shutdown()
