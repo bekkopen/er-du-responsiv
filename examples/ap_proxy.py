@@ -1,20 +1,29 @@
 #!/usr/bin/env python
+#
+# Usage: http://localhost:40808/?swap_css=<local.css>
+#
 
-from SimpleHTTPServer import SimpleHTTPRequestHandler
 import SocketServer
 import urllib
-import sys
+
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+from urlparse import urlparse
+from cgi import parse_qs
 
 PORT = 40808
 URL_PREFIX = "http://www.aftenposten.no"
 
-CSS_MOCK = None
+CSS_SWAP = []
 
 class ApProxy(SimpleHTTPRequestHandler):
 
     def do_GET(self):
-        if self.path.startswith("/css"):
-            self.path = "/%s" % CSS_MOCK
+        query = parse_qs(urlparse(self.path).query)
+        if "swap_css" in query:
+            CSS_SWAP.append(query["swap_css"][0])
+
+        if self.path.startswith("/css") and len(CSS_SWAP):
+            self.path = "/%s" % CSS_SWAP.pop()
             f = self.send_head()
             if f:
                 self.copyfile(f, self.wfile)
@@ -36,12 +45,6 @@ class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print "Usage: %s myfile.css" % sys.argv[0]
-        sys.exit(1)
-
-    CSS_MOCK = sys.argv[1]
-
     try:
         httpd = ThreadedTCPServer(("", PORT), ApProxy)
         httpd.serve_forever()
