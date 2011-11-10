@@ -17,7 +17,20 @@ CSS_SWAP = []
 
 class ApProxy(SimpleHTTPRequestHandler):
 
+    def filter_path(self):
+        for prefix in ("/resources", "/external", "/js"):
+            if self.path.startswith(prefix):
+                return True
+        return False
+
     def do_GET(self):
+        if self.filter_path():
+            self.send_response(404, "File not found")
+            self.send_header("Content-Type", self.error_content_type)
+            self.send_header('Connection', 'close')
+            self.end_headers()
+            return
+
         query = parse_qs(urlparse(self.path).query)
         if "swap_css" in query:
             CSS_SWAP.append(query["swap_css"][0])
