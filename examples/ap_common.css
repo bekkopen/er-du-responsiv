@@ -1,0 +1,17 @@
+/*!skins global reset.css */
+html{-webkit-font-smoothing:antialiased;}
+body{background:#fff;color:#000;font-family:Arial,sans-serif;font-size:12px;line-height:1.22;margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,p,ul,blockquote,li,hr,form{margin:0;}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,meter{display:block;}
+input,textarea,select{font-family:Arial,sans-serif;margin:0;padding:0;}
+input,select{vertical-align:middle;}
+img,iframe,object{border:none 0;margin:0;vertical-align:bottom;}
+ul{list-style:none;padding:0;}
+a{outline:none;text-decoration:none;}
+table{border-collapse:collapse;border-spacing:0;}
+*[href]{cursor:pointer;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.clearfix{display:inline-block;}
+html .clearfix{display:block;}
+* html .clearfix{height:1%;}
