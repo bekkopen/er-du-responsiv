@@ -15,3 +15,53 @@ mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
 .clearfix{display:inline-block;}
 html .clearfix{display:block;}
 * html .clearfix{height:1%;}
+
+body {
+font-size: 14px;
+line-height: 1.4;
+}
+h1,h2,h3,h4,h5,h6 {
+line-height: 1;
+text-rendering: optimizeLegibility;
+word-wrap: break-word;
+}
+h1,h2 {
+margin-bottom: .22em;
+}
+.span10 h1,.span10 h2 {
+font-size: 81px;
+}
+.span9 h1,.span9 h2 {
+font-size: 73px;
+}
+.span8 h1,.span8 h2 {
+font-size: 65px;
+}
+.span7 h1,.span7 h2 {
+font-size: 56px;
+}
+.span6 h1,.span6 h2 {
+font-size: 48px;
+}
+.span5 h1,.span5 h2 {
+font-size: 40px;
+}
+.span4 h1,.span4 h2 {
+font-size: 31px;
+}
+.span3 h1,.span3 h2,.split3 h1,.split3 h2 {
+font-size: 23px;
+}
+.span2 h1,.span2 h2 {
+font-size: 16px;
+}
+.span1 h1,.span1 h2 {
+font-size: 14px;
+}
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a {
+color: #000;
+text-decoration: none;
+}
+p {
+margin-bottom: 1em;
+}

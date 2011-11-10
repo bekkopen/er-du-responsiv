@@ -5,7 +5,6 @@
 
 import SocketServer
 import urllib
-from cStringIO import StringIO
 
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 from urlparse import urlparse
@@ -15,7 +14,6 @@ PORT = 40808
 URL_PREFIX = "http://www.aftenposten.no"
 
 CSS_SWAP = []
-CSS_COMMON = None
 
 class ApProxy(SimpleHTTPRequestHandler):
 
@@ -26,11 +24,14 @@ class ApProxy(SimpleHTTPRequestHandler):
 
         if self.path.startswith("/css") and len(CSS_SWAP):
             self.path = "/%s" % CSS_SWAP.pop()
-            f = self.send_head()
-            if f:
-                self.copyfile(CSS_COMMON, self.wfile)
-                self.copyfile(f, self.wfile)
-                f.close()
+            specific_file = self.send_head()
+            if specific_file:
+                common_file = open("ap_common.css")
+                if common_file:
+                    self.copyfile(common_file, self.wfile)
+                    common_file.close()
+                self.copyfile(specific_file, self.wfile)
+                specific_file.close()
         else:
             url = URL_PREFIX + self.path
             f = urllib.urlopen(url)
@@ -48,9 +49,6 @@ class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
 
 
 if __name__ == "__main__":
-    with open("ap_common.css") as f:
-        CSS_COMMON = StringIO(f.read())
-
     try:
         httpd = ThreadedTCPServer(("", PORT), ApProxy)
         httpd.serve_forever()
