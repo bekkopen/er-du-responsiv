@@ -24,14 +24,10 @@ class ApProxy(SimpleHTTPRequestHandler):
 
         if self.path.startswith("/css") and len(CSS_SWAP):
             self.path = "/%s" % CSS_SWAP.pop()
-            specific_file = self.send_head()
-            if specific_file:
-                common_file = open("ap_common.css")
-                if common_file:
-                    self.copyfile(common_file, self.wfile)
-                    common_file.close()
-                self.copyfile(specific_file, self.wfile)
-                specific_file.close()
+            f = self.send_head()
+            if f:
+                self.copyfile(f, self.wfile)
+                f.close()
         else:
             url = URL_PREFIX + self.path
             f = urllib.urlopen(url)
