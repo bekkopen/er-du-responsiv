@@ -5,7 +5,7 @@ import SocketServer
 import urllib
 import sys
 
-PORT = 8080
+PORT = 40808
 URL_PREFIX = "http://www.aftenposten.no"
 
 CSS_MOCK = None
@@ -13,6 +13,7 @@ CSS_MOCK = None
 class ApProxy(SimpleHTTPRequestHandler):
 
     def do_GET(self):
+        print "Handing %s" % self.path
         if self.path.startswith("/css"):
             self.path = "/%s" % CSS_MOCK
             f = self.send_head()
@@ -30,6 +31,11 @@ class ApProxy(SimpleHTTPRequestHandler):
         self.log_message('"%s" %s %s',
                          "GET %s" % self.path, str(code), str(size))
 
+
+class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+    pass
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print "Usage: %s myfile.css" % sys.argv[0]
@@ -37,5 +43,5 @@ if __name__ == "__main__":
 
     CSS_MOCK = sys.argv[1]
 
-    httpd = SocketServer.TCPServer(("", PORT), ApProxy)
+    httpd = ThreadedTCPServer(("", PORT), ApProxy)
     httpd.serve_forever()
