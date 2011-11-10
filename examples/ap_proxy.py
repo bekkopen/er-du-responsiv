@@ -5,7 +5,7 @@ import SocketServer
 import urllib
 import sys
 
-PORT = 40808
+PORT = 8080
 URL_PREFIX = "http://www.aftenposten.no"
 
 CSS_MOCK = None
@@ -13,7 +13,6 @@ CSS_MOCK = None
 class ApProxy(SimpleHTTPRequestHandler):
 
     def do_GET(self):
-        print "Handing %s" % self.path
         if self.path.startswith("/css"):
             self.path = "/%s" % CSS_MOCK
             f = self.send_head()
