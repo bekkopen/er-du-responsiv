@@ -1,20 +1,42 @@
 #!/usr/bin/env python
+#
+# Usage: http://localhost:40808/?swap_css=<local.css>
+#
 
-from SimpleHTTPServer import SimpleHTTPRequestHandler
 import SocketServer
 import urllib
-import sys
 
-PORT = 8080
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+from urlparse import urlparse
+from cgi import parse_qs
+
+PORT = 40808
 URL_PREFIX = "http://www.aftenposten.no"
 
-CSS_MOCK = None
+CSS_SWAP = []
 
 class ApProxy(SimpleHTTPRequestHandler):
 
+    def filter_path(self):
+        for prefix in ("/resources", "/external", "/js"):
+            if self.path.startswith(prefix):
+                return True
+        return False
+
     def do_GET(self):
-        if self.path.startswith("/css"):
-            self.path = "/%s" % CSS_MOCK
+        if self.filter_path():
+            self.send_response(404, "File not found")
+            self.send_header("Content-Type", self.error_content_type)
+            self.send_header('Connection', 'close')
+            self.end_headers()
+            return
+
+        query = parse_qs(urlparse(self.path).query)
+        if "swap_css" in query:
+            CSS_SWAP.append(query["swap_css"][0])
+
+        if self.path.startswith("/css") and len(CSS_SWAP):
+            self.path = "/%s" % CSS_SWAP.pop()
             f = self.send_head()
             if f:
                 self.copyfile(f, self.wfile)
@@ -30,12 +52,15 @@ class ApProxy(SimpleHTTPRequestHandler):
         self.log_message('"%s" %s %s',
                          "GET %s" % self.path, str(code), str(size))
 
+
+class ThreadedTCPServer(SocketServer.ThreadingMixIn, SocketServer.TCPServer):
+    pass
+
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print "Usage: %s myfile.css" % sys.argv[0]
-        sys.exit(1)
-
-    CSS_MOCK = sys.argv[1]
-
-    httpd = SocketServer.TCPServer(("", PORT), ApProxy)
-    httpd.serve_forever()
+    try:
+        httpd = ThreadedTCPServer(("", PORT), ApProxy)
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        httpd.socket.close()
+        httpd.shutdown()
