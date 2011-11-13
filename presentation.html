@@ -308,6 +308,63 @@
       </article>
 
       <article>
+        <h3>Fast grid</h3>
+        <p>3 kolonner, 300px med 50px margin</p>
+        <br>
+        <img src="images/fixed-grid.png" class="centered">
+        <!--
+          Eksempelgrid bestående av tre kollonner, hver på 300px med 50px margin.
+          Andre rad består av en bred kollonne med to kollonner inni seg, og en vanlig kolonne som går over to høyder.
+        -->
+      </article>
+      
+      <article>
+        <br><br><br><br><br>
+        <h3 class="huge">mål ÷ kontekst = resultat</h3>
+        
+        
+        <!-- 
+          mål:      ønskelig mål sett i perspektiv av helheten
+          kontekst: hva det skal brukes som utgangspunkt i utregningen, ofte bredden til boksen du er innenfor
+          resultat: relativ størrelse mellom mål og kontekst, gang med 100% for å få i prosent
+        
+          Det som er vanskelig med denne formelen er å vite hva som er kontekst:
+          
+          For marginer er kontekst hele bredden av rammene boksen skal plasseres innenfor, mens
+          for padding er konteksten selve boksen du skal tegne opp. Dette kommer naturlig av hvordan
+          html boksmodellen fungerer, hvor padding bidrar til bredden av boksen, mens marginene går
+          på utsiden av boksen.
+          
+          Formelen kan brukes uavhengig av enhet som vi vil se nå.
+          
+          Eksempel med piksler:
+          
+          300px ÷ 1000px * 100% = 30%
+          300px ÷  650px * 100% = 46.153846154%
+          
+          Eksempel med prosent:
+          
+          5% ÷ 65% * 100% = 7.692307692% 
+        -->
+      </article>
+      
+      
+      
+      <article>
+        <h3>Flytende grid</h3>
+        <p>&nbsp;</p>
+        <br>
+        <img src="images/fluid-grid.png" class="centered">
+        
+        <!--
+          Utregningen blir mer avansert med en gang vi får kollonner inni en annen kollonne.
+          
+          TIL AFTENPOSTEN
+        -->
+      </article>
+
+<!--
+      <article>
         <h3>
           HTML
         </h3>
@@ -376,6 +433,7 @@
           <a href="examples/fluid_grid.html">Eksempel</a>
         </div>
       </article>
+-->
 
       <article class="fill">
         <h2>
