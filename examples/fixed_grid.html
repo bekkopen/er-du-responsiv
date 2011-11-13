@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    
+    <title>Fixed grid</title>
+    
+    
+    <style>
+    
+      .wrapper {
+        margin: 0 auto;
+        width: 1000px;
+      }
+    
+      .span-1, .span-2 {
+        background: gray;
+        height: 100px;
+        float: left;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+        line-height: 100px;
+      }
+      
+      .row {
+        clear: both;
+      }
+      
+      .last {
+        margin-right: 0px;
+      }
+      
+      .span-1 {
+        width: 300px;
+      }
+      
+      .span-2 {
+        width: 650px;
+        height: 250px;
+        background: yellow;
+        overflow:hidden;
+      }
+    
+    
+    
+    </style>
+  </head>
+  
+  
+  
+  <body>
+    
+    <div class="wrapper">
+
+    <div class="row">
+      <div class="span-1">300px</div>
+      <div class="span-1">300px</div>
+      <div class="span-1 last">300px</div>
+    </div>
+    
+    <div class="row">
+      <div class="span-2">
+        <div class="span-1">300px</div>
+        <div class="span-1 last">300px</div>
+        
+        <div class="span-1">300px</div>
+        <div class="span-1 last">300px</div>
+      </div>
+    
+      <div class="span-1 last" style="height: 250px;">300px</div>
+    </div>
+    
+    </div>
+    
+  </body>
+</html>
