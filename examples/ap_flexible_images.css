@@ -1,3 +1,5 @@
+/* start of common styles */
+
 html{-webkit-font-smoothing:antialiased;}
 body{background:#fff;color:#000;font-family:Arial,sans-serif;font-size:12px;line-height:1.22;margin:0;padding:0;}
 h1,h2,h3,h4,h5,h6,p,ul,blockquote,li,hr,form{margin:0;}
@@ -65,16 +67,35 @@ p {
 margin-bottom: 1em;
 }
 
-
 .standardMenu ul {
 position: relative;
 z-index: 597;
 }
 .standardMenu li {
 float: left;
-margin: 0;
+padding-right:1.694915254%;
 cursor: pointer;
 }
+
+#header {
+	background: black;
+	color: white;
+}
+
+#header .weather {
+	display: none;
+}
+
+#header a {
+	color: white;
+}
+
+#header .topMainMenu a, .smallHeader a {
+	font-size: 18px;
+	font-weight: normal;
+}
+
+/* grid */
 
 .grid12{margin:0 auto;overflow:visible;padding:0 0px;max-width:1180px;}
 .gridRow{clear:both;}
@@ -92,6 +113,16 @@ cursor: pointer;
 .span3{width:23.728813559%;} /* 280/1180 */
 .span2{width:15.254237288%;} /* 180/1180 */
 .span1{width:6.779661017%;} /* 80/1180 */
+
+.span10 .span8{width:79.591836735%;} /* 780/980 */
+.span10 .span7{width:69.387755102%;} /* 680/980 */
+.span10 .span6{width:59.183673469%;} /* 580/980 */
+.span10 .span5{width:48.979591837%;} /* 480/980 */
+.span10 .span4{width:38.775510204%;} /* 380/980 */
+.span10 .span3{width:28.571428571%;} /* 280/980 */
+.span10 .span2{width:18.367346939%;} /* 180/980 */
+
+/* flexible media */
 
 img,
 video,
