@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    
+    <title>Fluid grid</title>
+    
+    
+    <style>
+    
+      .wrapper {
+        margin: 0 auto;
+        max-width: 1000px;
+      }
+    
+      .span-1, .span-2 {
+        background: gray;
+        height: 100px;
+        float: left;
+        margin-right: 5%;
+        margin-bottom: 50px;
+        text-align: center;
+        line-height: 100px;
+      }
+      
+      .row {
+        clear: both;
+      }
+      
+      .last {
+        margin-right: 0 !important;
+      }
+      
+      .span-1 {
+        width: 30%;
+      }
+      
+      .span-2 {
+        width: 65%;
+        height: 250px;
+        background: yellow;
+        overflow:hidden;
+      }
+      
+      .span-2 .span-1 {
+        width: 46.153846154%;
+        margin-right: 7.692307692%;
+      }
+    
+    
+    
+    </style>
+  </head>
+  
+  
+  
+  <body>
+    
+    <div class="wrapper">
+
+    <div class="row">
+      <div class="span-1">30%</div>
+      <div class="span-1">30%</div>
+      <div class="span-1 last">30%</div>
+    </div>
+    
+    <div class="row">
+      <div class="span-2">
+        <div class="span-1">46,153846154%</div>
+        <div class="span-1 last">46,153846154%</div>
+        
+        <div class="span-1">46,153846154%</div>
+        <div class="span-1 last">46,153846154%</div>
+      </div>
+    
+      <div class="span-1 last" style="height: 250px;line-height: 250px;">30%</div>
+    </div>
+    
+    </div>
+    
+  </body>
+</html>
