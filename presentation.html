@@ -291,7 +291,6 @@
           <li>Flytende grid</li>
           <li>Fleksible bilder</li>
           <li>Media queries</li>
-          <li>(Dynamisk innhold)?? : skal vi snakke noe om dette?</li>
         </ol>
       </article>
 
@@ -782,125 +781,6 @@ img {
         </section>
       </article>
 
-
-      <article class="fill">
-        <h2>
-          JavaScript
-        </h2>
-        <p>
-          <img src="images/coffe_beans.jpg">
-        </p>
-        <div class='source white'>
-          http://flic.kr/p/7bZHcN
-        </div>
-      </article>
-
-      <article class="smaller">
-        <h3>
-          HTML tabell
-        </h3>
-        <section>
-<pre>
-&lt;!DOCTYPE html&gt;
-&lt;title&gt;Tabell&lt;/title&gt;
-&lt;div id="page"&gt;
-  &lt;article&gt;
-    Hovedinnhold
-
-    &lt;table&gt;
-      &lt;tr&gt;
-        &lt;th&gt;
-          Fragmentation
-        &lt;th&gt;
-          Solution
-        &hellip;
-      &lt;tr&gt;
-        &lt;td&gt;
-          Encapsulated silicon
-        &lt;td&gt;
-          Infrared transponder
-        &hellip;
-    &lt;/table&gt;
-
-  &lt;/article&gt;
-  &lt;aside&gt;Sekund&aelig;rt innhold&lt;/aside&gt;
-&lt;/div&gt;
-</pre>
-        </section>
-      </article>
-
-      <article>
-        <h3>
-          Vertikal utlising av tabell
-        </h3>
-        <section>
-<pre>
-table,
-thead,
-tbody,
-tr,
-th,
-td {
-  display: block;
-}
-
-tr {
-  margin-bottom: .5em;
-}
-</pre>
-        </section>
-      </article>
-
-      <article class="smaller">
-        <h3>
-          Normal tabellstil for bredere skjerm
-        </h3>
-        <section>
-<pre>
-@media screen and (min-width: 45em) {
-  table {
-    display: table;
-  }
-
-  tr {
-    display: table-row;
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tbody {
-    display: table-row-group;
-  }
-
-  td,
-  th {
-    display: table-cell;
-  }
-}
-</pre>
-        </section>
-      </article>
-
-      <article>
-        <h3>
-          JavaScript for bedre vertikal utlisting
-        </h3>
-        <section>
-<pre>
-var responsiveTables = function() {
-  $("article table").each(function(table) {
-    if($(table).css("display") === "block") {
-      prependHeadersToTableCells(table);
-    } else if($(table).css("display") === "table") {
-      removeHeadersFromTableCells(table);
-    }
-  });
-}
-</pre>
-        </section>
-      </article>
       <article class="fill">
         <h2>
           Utbredelse
