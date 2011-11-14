@@ -3,32 +3,39 @@
 <style>
   #content {
     max-width: 500px;
-    margin: 1em auto;
+    margin: 0 auto;
+    padding: 2em;
+  }
+
+  img {
+    max-width: 100%;
   }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 <script>
   $(function(){
-    $("noscript").each(function() {                                         
-      var ele = $(this),
-          content_width = ele.parent().width(),
-          img_widths = $.map(ele.data("widths").split(","),
-                             function(width) { return parseInt(width) }),
-          best_fit = img_widths.shift();
+    $("noscript").each(function() {
+      var ns = $(this),
+          base_src = ns.data("base-src"),
+          best_fit = 0,
+          content_width = ns.parent().width(),
+          img_widths = $.map(ns.data("widths").split(","),
+                             function(width) { return parseInt(width) });
+
       $.each(img_widths, function(i, img_width) {
-        console.log(img_width, content_width, img_width > content_width);
+        best_fit = i;
         if (img_width > content_width) {
-          best_fit = img_width;
           return false;
         }
       });
-      console.log("best fit", best_fit);
+      var src = base_src.replace(/(.+)(\.\w{3})/, "$1" + img_widths[best_fit] + "$2")
+      ns.after($("<img>").attr("src", src));
     });
   });
 </script>
 
 <div id="content">
-  <noscript data-widths="200,300,400">
-    <img src="river-200.png">
+  <noscript data-widths="200,300,400" data-base-src="responsive-.png">
+    <img src="responsive-200.png">
   </noscript>
 </div>
