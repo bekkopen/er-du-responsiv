@@ -20,7 +20,6 @@
     <script
       src='slides.js'></script>
     <style>
-
       a {
         text-decoration: none;
       }
@@ -116,6 +115,43 @@
         height: 476px;
         width: 1010px;
         width: 673px;
+      }
+
+      @font-face {
+        font-family: "OFL Sorts Mill Goudy";
+        font-style: normal;
+        font-weight: normal;
+        src: url('http://mediaqueri.es/static/oflgoudystmtt-webfont.woff') format('woff'), url('http://mediaqueri.es/static/oflgoudystmtt-webfont.ttf') format('truetype'), url('http://mediaqueri.es/static/oflgoudystmtt-webfont.svg#webfontHB4987y4') format('svg');
+      }
+
+      #mq-logo h1,
+      #mq-logo h2 {
+        font-family: "OFL Sorts Mill Goudy",
+                     "Palatino",
+                     "Georgia",
+                     serif;
+        font-weight: normal;
+        text-align: center;
+        position: static;
+        letter-spacing: 0;
+      }
+
+      #mq-logo h1 {
+        font-size: 2.5em;
+        line-height: 1em;
+        margin: 0;
+      }
+
+        #mq-logo h1 a {
+          color: #333;
+        }
+
+          #mq-logo h1 a:hover {
+            color: #c00;
+          }
+
+      #mq-logo h2 {
+        font-size: 1em;
       }
     </style>
   </head>
@@ -813,10 +849,12 @@ $(function(){
       </article>
 
       <article>
+        <div id="mq-logo">
+          <h1><a href="/">Media Queries</a></h1>
+          <h2>a collection of sites using media queries</h2>
+        </div>
+
         <h3 class="huge">
-          mediaqueri.es
-          <br>
-          <br>
           260 publiserete sider
           <br>
           <br>
