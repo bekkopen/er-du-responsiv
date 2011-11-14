@@ -784,6 +784,26 @@ img {
         </section>
       </article>
 
+      <article>
+        <h3>
+          Responsive bilder
+        </h3>
+        <section>
+<pre>
+#page {
+  background: transparent url(narrow_bg.png) 50% 0 repeat-y;
+}
+
+@media screen and (min-width: 50em) {
+  #page {
+    background-image: url(wide_bg.png);
+  }
+}
+</pre>
+        </section>
+      </article>
+
+
       <article class="fill">
         <h2>
           JavaScript
@@ -993,14 +1013,14 @@ var responsiveTables = function() {
       </article>
 
       <article>
-        <h3>Når</h3>
+        <h3>Egner seg for</h3>
         
         <ul>
           <li>Typisk infoside, hvor ikke innhold er så veldig forskjellig.</li>
           <li>samme bruksoppgaver</li>
         </ul>
         
-        <h3>Når ikke</h3>
+        <h3>Egner seg ikke for</h3>
         
         <ul>
           <li>hvis du viser irrelevant innhold eller utfordrer ytelse</li>
